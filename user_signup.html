@@ -22,12 +22,12 @@
             position: relative;
         }
         .textbox {
-            padding-right: 30px; /* Adjust this value to accommodate the eye icon */
+            padding-right: 30px; 
         }
         .eye-icon {
             position: absolute;
             top: 50%;
-            right: 5px; /* Adjust this value to position the eye icon horizontally */
+            right: 5px; 
             transform: translateY(-50%);
             cursor: pointer;
         }
@@ -72,13 +72,13 @@
             <li class="nav-item"><a href="./about.html" class="nav-link" aria-current="page">About</a></li>
             <li class="nav-item"><a href="./product.html" class="nav-link">Products</a></li>
             <li class="nav-item"><a href="./contact.html" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a href="./user_signin.html" class="nav-link">Log In</a></li>
-            <li class="nav-item signup"><a href="./user_signup.html" class="nav-link">Sign Up</a></li>
+            <li class="nav-item"><a href="./user_signin.html" class="nav-link" id="log_in">Log In</a></li>
+            <li class="nav-item signup"><a href="./user_signup.html" class="nav-link" id="sign_up">Sign Up</a></li>
           </ul>
         </header>
     </div>
       
-    <div>
+    <div style="padding-top: 40px;height: 650px;">
         <h2 align="center" class="mt-5 mb-4 pt-5">Create an account</h2>
         <div class="my-4">
             <table align="center">
@@ -100,8 +100,8 @@
                 <tr>
                     <td colspan="2">
                         <div class="password-container">
-                            <input class="textbox" type="password" placeholder="*********" name="password" size="40" id="password">
-                            <i class="fa fa-eye-slash eye-icon"></i>
+                            <input class="textbox" type="password" placeholder="*********" name="password" size="40" id="password1" required>
+                            <i class="fa fa-eye-slash eye-icon" id="eye1" onclick="toggle1()" ></i>
                         </div>
                         
                     </td>
@@ -114,8 +114,8 @@
               <tr>
                   <td colspan="2">
                       <div class="password-container">
-                          <input class="textbox" type="password" placeholder="*********" name="password" size="40" id="password">
-                          <i class="fa fa-eye-slash eye-icon"></i>
+                          <input class="textbox" type="password" placeholder="*********" name="password" size="40" id="password2" required>
+                          <i class="fa fa-eye-slash eye-icon" id="eye2" onclick="toggle2()"></i>
                       </div>
                       
                   </td>
@@ -125,13 +125,11 @@
                         <input type="checkbox" name="remember" id="remember">
                         <label for="remember">Receive updates</label>
                     </td>
-                    <td>
-                        <a style="text-align: right;" href="./forgot_pass.html">Forgot Password?</a>
-                    </td>
+                    
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <button class="p-2 my-2" onclick="signup()" style="background-color : blue; color: white;width: 330px; border-radius: 4px;">Sign Up</button>
+                        <button class="p-2 my-2" onclick="signup()" style="background-color : blue; color: white;width: 330px; border-radius: 4px;">Register Now</button>
                     </td>
                 </tr>
                 <!-- <tr>
@@ -198,6 +196,7 @@
       <div class="fixed mx-auto py-4 my-4 border-top">
         <p class="text-center text-body-secondary">Made with ❤️ by team RideRevive  </p>
       </div>
+      
     </footer>
 
 
@@ -212,7 +211,60 @@
       }
 
       function signup(){
-        window.location.href = "./regestration.html"
+        var email = document.getElementById("email")
+        var pass1 = document.getElementById("password1")
+        var pass2 = document.getElementById("password2")
+        if((email.value).length == 0){
+          email.focus();
+          event.preventDefault();
+          return;
+        }
+        if((pass1.value).length == 0){
+          pass1.focus();
+          event.preventDefault();
+          return;
+        }
+        if((pass2.value).length == 0){
+          pass2.focus();
+          event.preventDefault();
+          return;
+        }
+        if((pass1.value)!=(pass2.value)){
+          pass2.value = "";
+          pass2.placeholder =  "Enter same password entered above"
+          pass2.focus();
+          event.preventDefault();
+          return
+        }
+        window.location.href = "./registration.html"
+      }
+
+      function toggle1(){
+        var pass = document.getElementById("password1")
+        var eye = document.getElementById("eye1")
+        if (pass.type == "password") {
+          eye.classList.remove("fa-eye-slash")
+          eye.classList.add("fa-eye")
+          pass.type = "text";
+        } else if(pass.type == "text") {
+          eye.classList.remove("fa-eye")
+          eye.classList.add("fa-eye-slash")
+          pass.type = "password";
+        }
+      }
+
+      function toggle2(){
+        var pass = document.getElementById("password2")
+        var eye = document.getElementById("eye2")
+        if (pass.type == "password") {
+          eye.classList.remove("fa-eye-slash")
+          eye.classList.add("fa-eye")
+          pass.type = "text";
+        } else if(pass.type == "text") {
+          eye.classList.remove("fa-eye")
+          eye.classList.add("fa-eye-slash")
+          pass.type = "password";
+        }
       }
     </script>
 </body>

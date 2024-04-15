@@ -11,31 +11,35 @@
 </head>
 <body class = "background">
   <main>
-    <div>
-      <div class=" nav-bar" id="nav-bar">
+    <div class="home_start">
+      <div class=" nav-bar " id="nav-bar">
         <header class="d-flex flex-wrap justify-content-center pt-3" style="width: 100%;">
           <a href="./home.html" class="d-flex align-items-center  mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <img src="./assets/RideRevive Rentals_transparent.png" width="200px" class="bi me-2" alt="Logo">
         </a>        
     
           <ul class="nav nav-pills" >
-            <li class="nav-item"><a href="./home.html" class="nav-link" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="./new_home.html" class="nav-link" aria-current="page">Home</a></li>
             <li class="nav-item"><a href="./about.html" class="nav-link" aria-current="page">About</a></li>
             <li class="nav-item"><a href="./product.html" class="nav-link">Products</a></li>
             <li class="nav-item"><a href="./contact.html" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a href="./user_signin.html" class="nav-link" id="log_in">Log In</a></li>
-            <li class="nav-item signup"><a href="./user_signup.html" class="nav-link" id="sign_up">Sign Up</a></li>
+            <b class="" id="name" style="padding-top: 10px;padding-left: 10px;font-size: 20px;">Hello Rakesh!</b>
           </ul>
         </header>
       </div>
-    
+      <div style="width: 100%; height: 730px; padding-top: 200px; padding-left: 100px;">
+        <h1 class="main_head">Unlock the Thrill of Driving</h1>
+        <p style="width: 600px;">At RideRevive Rentals, we're passionate about providing unforgettable motorbike experiences for riders of all levels. Whether you're an adrenaline junkie seeking off-road thrills, a road warrior longing for scenic rides, or a traveler looking to explore new destinations, we have the perfect ride for you.</p>
+        <button class="shop_btn" onclick="shop()">Shop Now</button>
+      </div>
+    </div>
 
-    <div class="pt-5">
+    <div>
       <h1 class="pt-4" style="text-align: center;">Our Products</h1>
       <p style="text-align: center ;padding-left: 150px ;width: 1400px;color: gray;">At RideRevive Rentals, we offer a diverse range of premium motorbikes to suit every rider's style and adventure. From sleek street bikes to rugged off-road <br> adventurers, our fleet is meticulously curated to provide you with the ultimate riding experience.</p>
     </div>
 
-    <div class="container">
+    <div class="product">
       <div class="bike">
         <p class="bike_name">KTM DUKE 200 CC</p>
         <img class="image" src="./css/KTM_DUKE_200.webp" alt="">
@@ -80,10 +84,6 @@
           <button class="ms-4 mt-1 p-1" id="4" onclick="buy(this.id)" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
         </div>
       </div>
-      
-    </div>
-
-    <div class="container">
       <div class="bike">
         <p class="bike_name">KTM RC 390</p>
         <img class="image" src="./css/KTM_RC_390.webp" alt="">
@@ -106,28 +106,10 @@
           <button class="ms-4 mt-1 p-1" id="6" onclick="buy(this.id)" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
         </div>
       </div>
-      <div class="bike">
-        <p class="bike_name">KTM RC 390</p>
-        <img class="image" src="./css/KTM_RC_390.webp" alt="">
-        <p class="available">Available at</p>
-        <p class="available_at">Hyderabad, Delhi, Goa</p>
-        <hr class="m-0 p-0">
-        <div class="pt-1 px-2">
-          <p style="text-align: center;font-size: small;display: inline-block; vertical-align: top;">₹2000 <br>(50 km included)</p>
-          <button class="ms-4 mt-1 p-1" id="7" onclick="buy(this.id)" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
-        </div>
-      </div>
-      <div class="bike">
-        <p class="bike_name">KTM RC 390</p>
-        <img class="image" src="./css/KTM_RC_390.webp" alt="">
-        <p class="available">Available at</p>
-        <p class="available_at">Hyderabad, Delhi, Goa</p>
-        <hr class="m-0 p-0">
-        <div class="pt-1 px-2">
-          <p style="text-align: center;font-size: small;display: inline-block; vertical-align: top;">₹2000 <br>(50 km included)</p>
-          <button class="ms-4 mt-1 p-1" id="8" onclick="buy(this.id)" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
-        </div>
-      </div>
+    </div>
+
+    <div class="text-center mt-5" >
+      <button class="py-2 px-4" style="background-color: red;color: white; border-radius: 20px;" onclick="more()">All Products</button>
     </div>
     </main>
 
@@ -193,12 +175,30 @@
 
     <script>
       window.onscroll = function() {scrollFunction()};
+      function getParameterByName(name) {
+        var urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+
+      // Get the data from the URL parameters
+      var name = getParameterByName('name');
+      if(name.length!=0){
+        document.getElementById("name").innerText =  `Hello ${name}!`
+      }
+      
       function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
           document.getElementById("nav-bar").classList.add("navbar-fixed");
         } else {
           document.getElementById("nav-bar").classList.remove("navbar-fixed");
         }
+      }
+      function shop(){
+        window.location.href = "./product.html"
+      }
+
+      function more(){
+        window.location.href = "./product.html"
       }
 
       function buy(id){
@@ -210,6 +210,7 @@
         window.location.href = newUrl;
         event.preventDefault()        
       }
+
     </script>
 </body>
 </html>

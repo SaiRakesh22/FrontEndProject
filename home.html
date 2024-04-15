@@ -23,8 +23,8 @@
             <li class="nav-item"><a href="./about.html" class="nav-link" aria-current="page">About</a></li>
             <li class="nav-item"><a href="./product.html" class="nav-link">Products</a></li>
             <li class="nav-item"><a href="./contact.html" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a href="./user_signin.html" class="nav-link">Log In</a></li>
-            <li class="nav-item signup"><a href="./user_signup.html" class="nav-link">Sign Up</a></li>
+            <li class="nav-item"><a href="./user_signin.html" class="nav-link" id="log_in">Log In</a></li>
+            <li class="nav-item signup"><a href="./user_signup.html" class="nav-link" id="sign_up" style="background-color: bisque;margin-bottom: 0px;padding-bottom: 15px;">Sign Up</a></li>
           </ul>
         </header>
       </div>
@@ -40,7 +40,7 @@
       <p style="text-align: center ;padding-left: 150px ;width: 1400px;color: gray;">At RideRevive Rentals, we offer a diverse range of premium motorbikes to suit every rider's style and adventure. From sleek street bikes to rugged off-road <br> adventurers, our fleet is meticulously curated to provide you with the ultimate riding experience.</p>
     </div>
 
-    <div class="container">
+    <div class="product">
       <div class="bike">
         <p class="bike_name">KTM DUKE 200 CC</p>
         <img class="image" src="./css/KTM_DUKE_200.webp" alt="">
@@ -49,7 +49,7 @@
         <hr class="m-0 p-0">
         <div class="pt-1 px-2">
           <p style="text-align: center;font-size: small;display: inline-block; vertical-align: top;">₹1350 <br>(50 km included)</p>
-          <button class="ms-4 mt-1 p-1" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
+          <button class="ms-4 mt-1 p-1" id="1" onclick="buy(this.id)" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
         </div>
       </div>
       <div class="bike">
@@ -60,7 +60,7 @@
         <hr class="m-0 p-0">
         <div class="pt-1 px-2">
           <p style="text-align: center;font-size: small;display: inline-block; vertical-align: top;">₹1800 <br>(50 km included)</p>
-          <button class="ms-4 mt-1 p-1" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
+          <button class="ms-4 mt-1 p-1" id="2" onclick="buy(this.id)" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
         </div>
       </div>
       <div class="bike">
@@ -71,7 +71,7 @@
         <hr class="m-0 p-0">
         <div class="pt-1 px-2">
           <p style="text-align: center;font-size: small;display: inline-block; vertical-align: top;">₹1600 <br>(50 km included)</p>
-          <button class="ms-4 mt-1 p-1" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
+          <button class="ms-4 mt-1 p-1" id="3" onclick="buy(this.id)" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
         </div>
       </div>
       <div class="bike">
@@ -82,13 +82,35 @@
         <hr class="m-0 p-0">
         <div class="pt-1 px-2">
           <p style="text-align: center;font-size: small;display: inline-block; vertical-align: top;">₹2000 <br>(50 km included)</p>
-          <button class="ms-4 mt-1 p-1" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
+          <button class="ms-4 mt-1 p-1" id="4" onclick="buy(this.id)" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
+        </div>
+      </div>
+      <div class="bike">
+        <p class="bike_name">KTM RC 390</p>
+        <img class="image" src="./css/KTM_RC_390.webp" alt="">
+        <p class="available">Available at</p>
+        <p class="available_at">Hyderabad, Delhi, Goa</p>
+        <hr class="m-0 p-0">
+        <div class="pt-1 px-2">
+          <p style="text-align: center;font-size: small;display: inline-block; vertical-align: top;">₹2000 <br>(50 km included)</p>
+          <button class="ms-4 mt-1 p-1" id="5" onclick="buy(this.id)" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
+        </div>
+      </div>
+      <div class="bike">
+        <p class="bike_name">KTM RC 390</p>
+        <img class="image" src="./css/KTM_RC_390.webp" alt="">
+        <p class="available">Available at</p>
+        <p class="available_at">Hyderabad, Delhi, Goa</p>
+        <hr class="m-0 p-0">
+        <div class="pt-1 px-2">
+          <p style="text-align: center;font-size: small;display: inline-block; vertical-align: top;">₹2000 <br>(50 km included)</p>
+          <button class="ms-4 mt-1 p-1" id="6" onclick="buy(this.id)" style="background-color: yellow; color: black;width: 130px;border-radius: 0.4rem; display: inline-block; vertical-align: top;font-size: small;">Rent Now</button>
         </div>
       </div>
     </div>
 
     <div class="text-center mt-5" >
-      <button class="py-2 px-4" style="background-color: red;color: white; border-radius: 20px;" onclick="more()">More Products</button>
+      <button class="py-2 px-4" style="background-color: red;color: white; border-radius: 20px;" onclick="more()">All Products</button>
     </div>
     </main>
 
@@ -167,6 +189,16 @@
 
       function more(){
         window.location.href = "./product.html"
+      }
+
+      function buy(id){
+        var formData = {
+          id: id,
+        };
+        var queryString = Object.keys(formData).map(key => key + '=' + encodeURIComponent(formData[key])).join('&');
+        var newUrl = `payment.html?${queryString}`;
+        window.location.href = newUrl;
+        event.preventDefault()        
       }
 
     </script>

@@ -9,6 +9,46 @@
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="./css/home.css">
     <link rel="stylesheet" href="./css/contact.css">
+    <style>
+
+      form {
+          max-width: 600px;
+          margin: 0 auto;
+      }
+
+      .form-group {
+          margin-bottom: 20px;
+      }
+
+      label {
+          display: block;
+          font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+
+      button {
+          padding: 10px 20px;
+          background-color: #333;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+
+      button:hover {
+          background-color: #555;
+      }
+
+
+    </style>
 </head>
 <body class = "background">
   <main>
@@ -24,8 +64,8 @@
             <li class="nav-item"><a href="./about.html" class="nav-link" aria-current="page">About</a></li>
             <li class="nav-item"><a href="./product.html" class="nav-link">Products</a></li>
             <li class="nav-item"><a href="./contact.html" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a href="./user_signin.html" class="nav-link">Log In</a></li>
-            <li class="nav-item signup"><a href="./user_signup.html" class="nav-link">Sign Up</a></li>
+            <li class="nav-item"><a href="./user_signin.html" class="nav-link" id="log_in">Log In</a></li>
+            <li class="nav-item signup"><a href="./user_signup.html" class="nav-link" id="sign_up">Sign Up</a></li>
           </ul>
         </header>
       </div>
@@ -33,6 +73,25 @@
     
     <div class="contact m-5">
       <h2 class="text-center pt-3 mx-4 " style="width: 95%;height: 70px; background-color:lightgrey;">Contact Us</h2>
+      <!-- From -->
+      <div>
+        <form id="contactForm" style="margin-top: 40px;">
+          <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+      <!-- To -->
+      </div>
     </div>
     </main>
 
@@ -105,6 +164,24 @@
           document.getElementById("nav-bar").classList.remove("navbar-fixed");
         }
       }
+
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // Get form values
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+
+        // Here you can perform further validation if needed
+
+        // For demonstration purposes, just log the values to console
+        console.log('Name:', name);
+        console.log('Email:', email);
+        console.log('Message:', message);
+
+        // You can add AJAX request or other functionality here to send the form data to the server
+      });
 
     </script>
 </body>
